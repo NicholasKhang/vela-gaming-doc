@@ -28,7 +28,7 @@ This document describes the service integration between **Gaming (provider)** an
 - If the player is not found in VG Game Server, VG Game Server will treat it as new player and register as a new player.
 - This method is called on launching the game for the logged-in player.
 
-![Diagram](../../assets/images/image002.jpg)
+![Diagram](../assets/images/image002.jpg)
 
 * * *
 
