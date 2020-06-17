@@ -227,3 +227,5 @@ title: Examples
 ```
 
 <!-- type: tab-end -->
+
+### Get Balance
