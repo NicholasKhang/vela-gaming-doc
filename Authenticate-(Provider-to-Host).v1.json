@@ -1,0 +1,78 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Vela Gaming",
+    "version": "1.0",
+    "description": "This document describes the service integration between Gaming (provider) and a host system / operator (host). The following chapters describe the general concept of integration as well as descriptions and examples of the API methods used for the service integration.\n\nGeneral Notes"
+  },
+  "servers": [
+    {
+      "url": "http://sample-host.vcfgame.com/users"
+    }
+  ],
+  "paths": {
+    "/authenticate": {
+      "get": {
+        "summary": "Authenticate",
+        "tags": [
+          "API Reference"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "string"
+                    },
+                    "member_id": {
+                      "type": "string"
+                    },
+                    "currency": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "Success": {
+                    "value": {
+                      "status_code": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-authenticate",
+        "description": "Verify the access token sent from the game provider. This method is called on launching the game for the logged-in player. Despite common wallet or separate wallet approach, the Host needs to implement this API for user verification.",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "access_token",
+            "description": "access"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "game_code",
+            "description": "Game Code"
+          }
+        ]
+      },
+      "parameters": []
+    }
+  },
+  "components": {
+    "schemas": {},
+    "securitySchemes": {}
+  }
+}
